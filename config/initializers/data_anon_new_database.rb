@@ -1,0 +1,1 @@
+DATA_ANON_NEW_DB = YAML.load_file(File.join(Rails.root, "config", "data_anon_new_database.yml"))[Rails.env.to_s] 

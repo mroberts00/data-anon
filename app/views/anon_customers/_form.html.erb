@@ -1,0 +1,67 @@
+<%= form_with(model: anon_customer, local: true) do |form| %>
+  <% if anon_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(anon_customer.errors.count, "error") %> prohibited this anon_customer from being saved:</h2>
+
+      <ul>
+      <% anon_customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :anon_customer_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :anon_customer_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address1 %>
+    <%= form.text_field :address1, id: :anon_customer_address1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address2 %>
+    <%= form.text_field :address2, id: :anon_customer_address2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, id: :anon_customer_postcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :anon_customer_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :anon_customer_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :creditcard %>
+    <%= form.text_field :creditcard, id: :anon_customer_creditcard %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :anon_customer_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.date_select :birthday, id: :anon_customer_birthday %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

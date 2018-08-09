@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anon Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>Postcode</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Creditcard</th>
+      <th>City</th>
+      <th>Birthday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anon_customers.each do |anon_customer| %>
+      <tr>
+        <td><%= anon_customer.first_name %></td>
+        <td><%= anon_customer.last_name %></td>
+        <td><%= anon_customer.address1 %></td>
+        <td><%= anon_customer.address2 %></td>
+        <td><%= anon_customer.postcode %></td>
+        <td><%= anon_customer.state %></td>
+        <td><%= anon_customer.phone %></td>
+        <td><%= anon_customer.creditcard %></td>
+        <td><%= anon_customer.city %></td>
+        <td><%= anon_customer.birthday %></td>
+        <td><%= link_to 'Show', anon_customer %></td>
+        <td><%= link_to 'Edit', edit_anon_customer_path(anon_customer) %></td>
+        <td><%= link_to 'Destroy', anon_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anon Customer', new_anon_customer_path %>
